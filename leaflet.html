@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>OpenStreetMap Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <style media="screen">
+      #mapid { height: 180px; }
+    </style>
+  </head>
+  <body>
+
+      <!-- <textarea name="name" rows="8" cols="80">
+      Faire une carte leaflet ( 3 markers sur une carte avec un des 3 marker doit être personnalisé, donc différent des 2 autres.
+      Puis la pushé tous ça avec votre carte google de hier sur github, merci bien
+
+      tutoriel : https://www.lije-creative.com/tuto-leaflet-tiles-gratuits/ et http://leafletjs.com/examples.html
+
+      </textarea> -->
+
+     <div id="mapid" style="width:545px; height:490px"></div>
+
+     <script type="text/javascript">
+       var carte = L.map('mapid').setView([43.181960200000006, 2.9785079999999997], 8);
+
+       var myIcon = L.icon({
+         iconUrl: 'my-icon.png',
+         iconSize: [50, 50],
+         iconAnchor: [22, 94],
+         popupAnchor: [-3, -76]
+        //  shadowUrl: 'my-icon-shadow.png',
+        //  shadowSize: [68, 95],
+        //  shadowAnchor: [22, 94]
+       });
+
+       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(carte);
+
+        var markerNarbonne = L.marker([43.181960200000006, 2.9785079999999997]).addTo(carte);
+        //pour le marker beziers on rajoute icon : myIcon pour utiliser l image en png.
+        var markerBeziers = L.marker([43.344233, 3.215795000000071],{icon: myIcon}).addTo(carte);
+        var markerMontpellier = L.marker([43.610769, 3.8767159999999876]).addTo(carte);
+
+        markerNarbonne.bindPopup('');
+        var mapopupNarbonne = markerNarbonne.getPopup();
+        mapopupNarbonne.setContent('Narbonne');
+        // ca ouvre la popup au chargement si on l enleve ca se fera au clik du coup.
+        // markerNarbonne.openPopup();
+
+        markerBeziers.bindPopup('');
+        var mapopup = markerBeziers.getPopup();
+        mapopup.setContent('Beziers');
+        // ca ouvre la popup au chargement si on l enleve ca se fera au clik du coup.
+        // markerBeziers.openPopup();
+
+        markerMontpellier.bindPopup('');
+        var mapopupMontpellier = markerMontpellier.getPopup();
+        mapopupMontpellier.setContent('Montpellier');
+        // ca ouvre la popup au chargement si on l enleve ca se fera au clik du coup.
+        // markerMontpellier.openPopup();
+
+     </script>
+
+  </body>
+</html>
