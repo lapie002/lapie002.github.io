@@ -72,10 +72,10 @@
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(carte);
 
-        var markerNarbonne = L.marker([43.181960200000006, 2.9785079999999997],{icon: greenIcon}).addTo(carte);
+        var markerNarbonne = L.marker([43.181960200000006, 2.9785079999999997],{icon: myIconNarbonne}).addTo(carte);
         //pour le marker beziers on rajoute icon : myIcon pour utiliser l image en png.
-        var markerBeziers = L.marker([43.344233, 3.215795000000071],{icon: myIcon}).addTo(carte);
-        var markerMontpellier = L.marker([43.610769, 3.8767159999999876],{icon: myIconDarkMontpellier}).addTo(carte);
+        var markerBeziers = L.marker([43.344233, 3.215795000000071],{icon: myIconBeziers}).addTo(carte);
+        var markerMontpellier = L.marker([43.610769, 3.8767159999999876],{icon: myIconMontpellier}).addTo(carte);
 
         markerNarbonne.bindPopup('');
         var mapopupNarbonne = markerNarbonne.getPopup();
