@@ -1,103 +1,367 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>OpenStreetMap Leaflet</title>
-    <link rel="stylesheet" href="leaflet.css" />
-    <script src="leaflet.js"></script>
-    <style media="screen">
-      #mapid { height: 180px; }
-    </style>
-  </head>
-  <body>
+<html lang="fr">
 
-      <!-- <textarea name="name" rows="8" cols="80">
-      Faire une carte leaflet ( 3 markers sur une carte avec un des 3 marker doit être personnalisé, donc différent des 2 autres.
-      Puis la pushé tous ça avec votre carte google de hier sur github, merci bien
+<head>
+	<meta charset="utf-8">
+	<title>Bruno LAPIERRE - Développeur Web</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style-semantic.css">
+	<link rel="icon" type="image/png" href="favicon.png" />
 
-      tutoriel : https://www.lije-creative.com/tuto-leaflet-tiles-gratuits/ et http://leafletjs.com/examples.html
+</head>
 
-      tuto pour les images : http://leafletjs.com/examples/custom-icons/
+<body>
 
-      </textarea> -->
+	<!-- Header with photo, name and title -->
 
-     <div id="mapid" style="width:545px; height:490px"></div>
-
-     <script type="text/javascript">
-       var carte = L.map('mapid').setView([43.181960200000006, 2.9785079999999997], 8);
-
-       var myIconNarbonne = L.icon({
-            iconUrl: 'leaf-green.png',
-            shadowUrl: 'leaf-shadow.png',
-
-            iconSize:     [38, 95], // size of the icon
-            shadowSize:   [50, 64], // size of the shadow
-            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-            shadowAnchor: [4, 62],  // the same for the shadow
-            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-        });
-
-        var myIconBeziers = L.icon({
-             iconUrl: 'leaf-red.png',
-             shadowUrl: 'leaf-shadow.png',
-
-             iconSize:     [38, 95], // size of the icon
-             shadowSize:   [50, 64], // size of the shadow
-             iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-             shadowAnchor: [4, 62],  // the same for the shadow
-             popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-         });
-
-         var myIconMontpellier = L.icon({
-              iconUrl: 'leaf-orange.png',
-              shadowUrl: 'leaf-shadow.png',
-
-              iconSize:     [38, 95], // size of the icon
-              shadowSize:   [50, 64], // size of the shadow
-              iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-              shadowAnchor: [4, 62],  // the same for the shadow
-              popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-          });
-
-      //  var myIcon = L.icon({
-      //    iconUrl: 'my-icon.png',
-      //    iconSize: [50, 50],
-      //    iconAnchor: [22, 94],
-      //    popupAnchor: [-3, -76]
-      //    shadowUrl: 'my-icon-shadow.png',
-      //    shadowSize: [68, 95],
-      //    shadowAnchor: [22, 94]
-      //  });
+	<header class="container">
+		<div class="ui fourteen wide centered column grid header">
+			<div class="ui three wide column">
+				<img src="./img/bruno.jpg" alt="Photo de Lapierre Bruno" class="ui small centered bordered rounded image">
+			</div>
+			<div class="ui middle aligned twelve wide column header">
+				<div class="row">
+					<h1 class="ui huge centered header">Bruno Lapierre</h1>
+				</div>
+				<div class="row">
+					<h2 class="ui large centered header">Développeur Web</h2>
+				</div>
+				<div class="ui horizontal divider"></div>
+				<div class="row">
+					<h2 class="ui centered header"><em>Candidature pour un poste de développeur web.</em></h2>
+				</div>
+			</div>
+		</div>
+	</header>
 
 
-       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(carte);
+	<div class="ui clearing divider"></div>
 
-        var markerNarbonne = L.marker([43.181960200000006, 2.9785079999999997],{icon: myIconNarbonne}).addTo(carte);
-        //pour le marker beziers on rajoute icon : myIcon pour utiliser l image en png.
-        var markerBeziers = L.marker([43.344233, 3.215795000000071],{icon: myIconBeziers}).addTo(carte);
-        var markerMontpellier = L.marker([43.610769, 3.8767159999999876],{icon: myIconMontpellier}).addTo(carte);
+	<!-- Lateral bar with Skills, Exp Pro & Studies-->
 
-        markerNarbonne.bindPopup('');
-        var mapopupNarbonne = markerNarbonne.getPopup();
-        mapopupNarbonne.setContent('Narbonne');
-        // ca ouvre la popup au chargement si on l enleve ca se fera au clik du coup.
-        // markerNarbonne.openPopup();
+	<div class="ui fifteen wide column centered grid container">
+		<div class="ui twelve wide column">
 
-        markerBeziers.bindPopup('');
-        var mapopup = markerBeziers.getPopup();
-        mapopup.setContent('Beziers');
-        // ca ouvre la popup au chargement si on l enleve ca se fera au clik du coup.
-        // markerBeziers.openPopup();
+			<section class="ui orange segment">
+				<h3 class="ui huge header"><i class="laptop icon"></i>Compétences</h3>
+				<div class="ui three wide raised padded cards">
 
-        markerMontpellier.bindPopup('');
-        var mapopupMontpellier = markerMontpellier.getPopup();
-        mapopupMontpellier.setContent('Montpellier');
-        // ca ouvre la popup au chargement si on l enleve ca se fera au clik du coup.
-        // markerMontpellier.openPopup();
+					<div class="ui card skills">
+						<h4 class="ui medium centered header">Langages</h4>
+						<div class="ui miny centered images">
+						  <img class="ui image" data-position="bottom center" data-content="HTML" src="./img/icons/html_logo.png">
+						  <img class="ui image" data-position="bottom center" data-content="CSS" src="./img/icons/css_logo.png">
+              <img class="ui image" data-position="bottom center" data-content="Javascript ES6" src="./img/icons/Javascript.png">
+						</div>
+						<div class="ui miny centered images">
+							<img class="ui image" data-position="bottom center" data-content="Java" src="./img/icons/java8_logo.png">
+							<img class="ui image" data-position="bottom center" data-content="PHP" src="./img/icons/php7.png">
+							<img class="ui image" data-position="bottom center" data-content="SQL" src="./img/icons/sql.png">
+						</div>
+					</div>
 
-     </script>
+					<div class="ui card skills">
+						<h4 class="ui medium centered header">Framework &amp; Librairies</h4>
+						<div class="ui miny centered images">
+							<img class="ui image" data-position="bottom center" data-content="React.js" src="./img/icons/react_logo_2.png">
+							<img class="ui image" data-position="bottom center" data-content="Framework PHP Laravel" src="./img/icons/laravel_logo.png">
+							<img class="ui image" data-position="bottom center" data-content="Express.js" src="./img/icons/expressjs_logo.png">
+							<img class="ui image" data-position="bottom center" data-content="Semantic-UI" src="./img/icons/semantic_logo.png">
+							<img class="ui image" data-position="bottom center" data-content="Bootstrap" src="./img/icons/bootstrap_logo.png">
+							<img class="ui image" data-position="bottom center" data-content="Sass" src="./img/icons/sass_logo.png">
+						</div>
 
-  </body>
+					</div>
+
+					<div class="ui card skills">
+						<h4 class="ui medium centered header">Outils</h4>
+						<div class="ui miny centered images">
+							<img class="ui image" data-position="bottom center" data-content="Outil de Versionnage Git" src="./img/icons/git_logo.png">
+							<img class="ui image" data-position="bottom center" data-content="Docker" src="./img/icons/docker_logo.png">
+						</div>
+						<div class="ui miny centered images">
+							<img class="ui image brunch" data-position="bottom center" data-content="Jenkins" src="./img/icons/jenkins_logo.png">
+							<img class="ui image brunch" data-position="bottom center" data-content="Builder Brunch" src="./img/icons/brunch_logo.png">
+              <img class="ui image" data-position="bottom center" data-content="mySQL" src="./img/icons/mysql_logo.png">
+						</div>
+					</div>
+
+					<div class="ui card skills styled fluid accordion">
+						<h4 class="ui medium centered header title"><i class="dropdown icon"></i>Gestion de Projet</h4>
+						<span class="contenu content">Budgétisation, Rédaction de cahier des charges, Briefs techniques et artistiques, Rétro-planification, Méthodes Agiles, Logiciel de Gestion de projet.</span>
+					</div>
+
+					<div class="ui card skills styled fluid accordion">
+						<h4 class="ui medium centered header title"><i class="dropdown icon"></i>Marketing</h4>
+						<span class="contenu content">Marketing Stratégique et Opérationnel, Marketing Mix, Branding, Etude de Marché, Plan Marketing.</span>
+					</div>
+
+					<div class="ui card skills styled fluid accordion">
+						<h4 class="ui medium centered header title"><i class="dropdown icon"></i>E-Commerce</h4>
+						<span class="contenu content">Webanalytics, SEO, SEA, Emailing, CMS (Prestashop, Wordpress). Formation client en CMS, SEO &#38; Webmarketing.</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="ui orange segment">
+				<h3 class="ui huge header"><i class="line chart icon"></i>Expériences</h3>
+
+				<div class="ui two wide cards">
+					<div class="ui card styled accordion">
+						<div class="content title">
+							<div class="header"><i class="dropdown icon"></i>Développeuse Web</div>
+							<div class="meta"><span>Avril 2017 - Mai 2017</span><span>Cityliv, Toulouse (31)</span></div>
+						</div>
+						<ul class="ui list contenu content">
+							<div class="item"><i class="caret right icon"></i>Mise en place d'un outil de reporting du nombre de commandes et de livreurs</div>
+							<div class="item"><i class="caret right icon"></i>Automatisation de l'envoi à l'ensemble des collaborateurs de la société</div>
+							<div class="item"><i class="caret right icon"></i>Gestion du projet depuis le cahier des charges jusqu'à la mise en production</div>
+						</ul>
+					</div>
+
+					<div class="ui raised card styled fluid accordion">
+						<div class="content title">
+							<div class="header"><i class="dropdown icon"></i>Assistante Communication et Webmarketing</div>
+							<div class="meta"><span>Janvier - Juin 2014</span><span>Umbro France, Vitré (35)</span></div>
+						</div>
+						<ul class="ui list contenu content">
+							<div class="item"><i class="caret right icon"></i> Définition et mise en place de la Stratégie Marketing de la Marque</div>
+							<div class="item"><i class="caret right icon"></i> Administration, Animation et Modération des plateformes internet (Backoffice Umbro.com, réseaux Sociaux Facebook/Twitter, Blog, Newsletter)</div>
+							<div class="item"><i class="caret right icon"></i> Mise en place des activations digitales</div>
+							<div class="item"><i class="caret right icon"></i> Pilotage des événements opérationnels</div>
+							<div class="item"><i class="caret right icon"></i> Mise en place d'une BDD CRM</div>
+						</ul>
+					</div>
+
+					<div class="ui raised card styled fluid accordion">
+						<div class="content title">
+							<div class="header"><i class="dropdown icon"></i>Assistante Chef de Projet E-Commerce et Webmarketing</div>
+							<div class="meta"><span>Mars - Juillet 2013</span><span >Dream me Up, Plescosp (56)</span></div>
+						</div>
+						<ul class="ui list contenu content">
+							<div class="item"><i class="caret right icon"></i>Accompagnement des clients dans la création ou la refonte de leur site</div>
+							<div class="item"><i class="caret right icon"></i>Suivi des clients depuis la validation du devis jusqu’à la mise en ligne</div>
+							<div class="item"><i class="caret right icon"></i>Pilotage des projets pour garantir le suivi de production et respecter les délais</div>
+							<div class="item"><i class="caret right icon"></i>Préparation des briefs créatifs et techniques</div>
+						</ul>
+					</div>
+
+					<div class="ui card styled accordion">
+						<div class="content title">
+							<div class="header"><i class="dropdown icon"></i>Chargée de Dépôt &#38; Formatrice</div>
+							<div class="meta"><span>Septembre 2013 - Juin 2016</span> <span>McDonald's, Rennes</span></div>
+						</div>
+						<ul class="ui list contenu content">
+							<div class="item"><i class="caret right icon"></i>Mise en place et Comptage de Caisses</div>
+							<div class="item"><i class="caret right icon"></i>Dépôt des bénéfices de la journée</div>
+							<div class="item"><i class="caret right icon"></i>Formation des nouveaux collaborateurs à leur arrivée </div>
+							<div class="item"><i class="caret right icon"></i>Suivi de formation</div>
+							<div class="item"><i class="caret right icon"></i>Missions similaires à celles des équipiers polyvalents</div>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="ui orange segment">
+				<h3 class="ui huge header"><i class="student icon"></i>Formation</h3>
+
+				<div class="ui one wide cards">
+					<div class="ui raised card">
+						<div class="content">
+							<h4 class="header">Formation Développeuse Web</h4>
+							<div class="meta">Septembre 2016 - Mars 2017 - Simplon Toulouse</div>
+						</div>
+						<div class="ui two column grid">
+							<div class="ui column">
+								<h5 class="ui header">Langages &#38; Technologies</h5>
+								<ul class="ui list contenu">
+									<div class="item"><i class="caret right icon"></i>Front-End : HTML/CSS, Javascript ES6, React.js, Sass, Moment.js, Express.js</div>
+									<div class="item"><i class="caret right icon"></i>Back-End : Node.js, PHP, mySQL, Express.js, Laravel.</div>
+									<div class="item"><i class="caret right icon"></i>Git, Brunch.</div>
+									<div class="item"><i class="caret right icon"></i>POO &#38; MVC</div>
+								</ul>
+							</div>
+							<div class="ui column">
+								<h5 class="ui header">Outils &#38; Gestion de Projet</h5>
+								<ul class="ui list contenu">
+									<div class="item"><i class="caret right icon"></i>Méthodes Agiles: Scrum, Kanban/Trello, XP</div>
+									<div class="item"><i class="caret right icon"></i>Pair-programming</div>
+									<div class="item"><i class="caret right icon"></i>Sensibilisation à l' UX/UI</div>
+									<div class="item"><i class="caret right icon"></i>Animation d'ateliers de programmation pour enfants en collaboration avec la Compagnie du Code.</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="ui card styled accordion">
+						<div class="content title">
+							<h4 class="header"><i class="dropdown icon"></i>Master Marketing et Management International</h4>
+							<div class="meta">2014 - Université Rennes 2</div>
+						</div>
+						<div class="content">
+							<div class="ui two column grid">
+								<div class="ui column">
+									<ul class="ui list contenu">
+										<div class="item"><i class="caret right icon"></i>Marketing Stratégique et Opérationnel</div>
+										<div class="item"><i class="caret right icon"></i>Management</div>
+										<div class="item"><i class="caret right icon"></i>Droit des Affaires</div>
+										<div class="item"><i class="caret right icon"></i>PHP/HTML/CSS</div>
+										<div class="item"><i class="caret right icon"></i>Commerce International</div>
+										<div class="item"><i class="caret right icon"></i>Statistiques</div>
+										<div class="item"><i class="caret right icon"></i>Anglais &#38; Espagnol</div>
+									</ul>
+								</div>
+								<div class="ui column">
+									<ul class="ui list contenu">
+										<div class="item"><i class="caret right icon"></i>Etude de Marché : Entreprise A-linea</div>
+										<div class="item"><i class="caret right icon"></i>Plan Marketing : Entreprise La Trinitaine</div>
+										<div class="item"><i class="caret right icon"></i>Mémoire Professionnel : "Capital Marque à la reconquête du consommateur : le marketing digital comme aide à la reconstruction"</div>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui two wide cards">
+					<div class="ui card styled accordion">
+						<div class="content title">
+							<h4 class="header"><i class="dropdown icon"></i>Licence 3 en Erasmus</h4>
+							<div class="meta">2011-2012 - Universitat de Valencia (Espagne)</div>
+						</div>
+						<ul class="ui list contenu content">
+							<div class="item"><i class="caret right icon"></i>Marketing International</div>
+							<div class="item"><i class="caret right icon"></i>Communication Commerciale</div>
+							<div class="item"><i class="caret right icon"></i>Direction de Production</div>
+							<div class="item"><i class="caret right icon"></i>Anglais</div>
+							<div class="item"><i class="caret right icon"></i>Espagnol</div>
+							<div class="item"><i class="caret right icon"></i>Traduction</div>
+							<div class="item"><i class="caret right icon"></i>Histoire et Culture de la langue</div>
+						</ul>
+					</div>
+					<div class="ui card styled accordion">
+						<div class="content title">
+							<h4 class="header"><i class="dropdown icon"></i>Licence Langues Etrangères Appliquées Anglais/Espagnol</h4>
+							<div class="meta">2012 - Université de Rennes 2 (35)</div>
+						</div>
+						<ul class="ui list contenu content">
+							<div class="item"><i class="caret right icon"></i>Anglais</div>
+							<div class="item"><i class="caret right icon"></i>Espagnol</div>
+							<div class="item"><i class="caret right icon"></i>Comptabilité</div>
+							<div class="item"><i class="caret right icon"></i>Commerce International</div>
+							<div class="item"><i class="caret right icon"></i>Informatique</div>
+							<div class="item"><i class="caret right icon"></i>Négociation</div>
+							<div class="item"><i class="caret right icon"></i>Economie</div>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+
+
+<!-- Lateral bar four wide with Contact, Projects, Languages and Hobby -->
+
+		<div class="ui four wide segments centered column">
+			<div class="ui segment">
+				<a href="./files/JulianeBlier-DeveloppeuseWeb.pdf" target="_blank"><button class="ui big orange button ">Télécharger Mon CV</button></a>
+			</div>
+			<div class="ui segment">
+				<ul class="ui large list">
+					<div class="item">Née le 26/05/1991 </div>
+					<div class="item">Permis B</div>
+				</ul>
+				<ul class="ui large list">
+					<div class="item"><i class="map outline icon"></i> Toulouse</div>
+					<div class="item"><a href="tel:+33695024495"><i class="black phone icon"></i>+33 (0)6 95 02 44 95</a></div>
+					<div class="item"><a href="mailto:blier.juliane@gmail.com"><i class=" black envelope icon"></i>blier.juliane@gmail.com</a></div>
+				</ul>
+				<ul class="ui horizontal list">
+					<div class="item"><a href="https://github.com/Tactless7"><i class="circular big black github icon"></i></a></div>
+					<div class="item"><a href="https://fr.linkedin.com/in/juliane-blier-428b8b49"><i class="circular big black linkedin icon"></i></a></div>
+					<div class="item"><a href="https://twitter.com/Tactless7"><i class="circular big black twitter icon"></i></a></div>
+				</ul>
+			</div>
+			<div class="ui segment">
+				<h3 class="ui large header">Projets</h3>
+				<ul class="ui very relaxed large list">
+					<div class="item">
+						<div class="content">
+							<a class="title" href="https://github.com/Tactless7/projet-face-toulouse"><i class="black github icon"></i>FACE Toulouse</a>
+							<div class="description">Projet client : PHP, Laravel, OctoberCMS, MySQL, Javascript ES6, Bootstrap.</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="title" href="https://github.com/Laure-Milian/certification-simplon"><i class="black github icon"></i>Site E-commerce</a>
+							<div class="description">Certification de fin de formation : PHP, Laravel, Javascript, Bootstrap.</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="title" href="https://github.com/Mooncode29/Projet-DuchesseFrance"><i class="black github icon"></i>Duchess France</a>
+							<div class="description">Projet client : Node.js, Javascript ES6, Crontab, Express.js, Google SpreadSheet API.</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="title" href="https://github.com/MarineCO/Adaptathon-2016"><i class="black github icon"></i>Adaptathon</a>
+							<div class="description">Hackathon sur le thème du handicap. Position finale 4/10.</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="content">
+							<a class="title" href="http://www.programmez.com/actualites/devfest-toulouse-2016-retour-sur-la-premiere-edition-du-festival-de-developpeurs-toulousains-25220"><i class="black file text outline icon"></i>Article Programmez.com</a>
+							<div class="description">Co-auteur d'un article sur le retour du Devfest Toulouse 2016.</div>
+						</div>
+					</div>
+				</ul>
+			</div>
+
+			<div class="ui segment">
+
+				<h3>Langues</h3>
+				<ul class="ui large list">
+					<div class="item"><i class="fr flag"></i>Français maternel</div>
+					<div class="item"><i class="gb flag"></i>Anglais courant</div>
+					<div class="item"><i class="es flag"></i>Espagnol courant</div>
+				</ul>
+			</div>
+
+			<div class="ui segment">
+
+				<h3>Centres d'intérêt</h3>
+				<ul class="ui large relaxed list">
+					<div class="item"><i class="comments icon"></i><div class="content">Meetup (Toulouse JS, Toulouse Data Science, Google User Group, ...)</div></div>
+					<div class="item"><i class="code icon"></i><div class="content">Coding Goûters et Hour of Code</div></div>
+					<div class="item"><i class="student icon"></i><div class="content">MOOCs (Java, Gamification, ...)</div></div>
+					<div class="item"><i class="soccer icon"></i><div class="content">Sports (Football, Volleyball...)</div></div>
+					<div class="item"><i class="spy icon"></i><div class="content">Théâtre (7 ans)</div></div>
+					<div class="item"><i class="book icon"></i><div class="content">Lecture</div></div>
+					<div class="item"><i class="plane icon"></i><div class="content">Voyages (Pays anglophones et hispanophones)</div></div>
+					<div class="item"><i class="film icon"></i><div class="content">Cinéma</div></div>
+					<div class="item"><i class="game icon"></i><div class="content">Jeux Vidéo</div></div>
+					<div class="item"><i class="puzzle icon"></i><div class="content">Jeux de Société &#38; Poker</div></div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui clearing divider"></div>
+
+	<footer class="ui ten wide centered column container grid">
+		<div class="ui middle aligned six wide centered column">
+			<a href="./files/JulianeBlier-DeveloppeuseWeb.pdf" target="_blank"><button class="ui big orange button">Télécharger Mon CV</button></a>
+		</div>
+		<div class="ui middle aligned ten wide column">
+			<a href="https://github.com/Tactless7"><i class="circular big black github icon"></i></a>
+			<a href="https://fr.linkedin.com/in/juliane-blier-428b8b49"><i class="circular big black linkedin icon"></i></a>
+			<a href="https://twitter.com/Tactless7"><i class="circular big black twitter icon"></i></a>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src ="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.js"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
+</body>
+
 </html>

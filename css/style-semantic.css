@@ -1,0 +1,75 @@
+html > body {
+	max-width: 1200px;
+	margin: 10px auto;
+	font-size: 18px;
+}
+
+/*  Listes */
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul.ui.list {
+	margin-left: 0;
+}
+
+/* Images Size*/
+
+div.ui.miny.images img{
+	max-width: 4vw;
+	margin: 2vh 0.3vw;
+}
+div.ui.miny.images img:hover{
+	transform: scale(1.6);
+	z-index: 1;
+}
+
+div.ui.miny.images img.brunch {
+	max-height: 5.5vw;
+	margin: 0 1vw;
+}
+
+/* Segments */
+	.orange.segment {
+		margin-top: 3.5vh;
+	}
+
+	.fifteen.wide.column.grid.container {
+		margin-top: 2vh;
+	}
+
+/* Cartes compétences */
+.ui.wide.cards > .ui.card {
+	padding: 1em;
+	line-height: 1.5em;
+}
+
+.ui.wide.cards .contenu, .ui.list > .item .description {
+	text-align: justify;
+}
+
+.ui.card.skills div.item, .ui.card.skills span,.ui.list.contenu > .item{
+	line-height: 1.5em;
+	font-size: 1.1em;
+}
+
+.ui.card .content.title {
+	max-height: 25%;
+}
+
+div.description {
+	line-height: 1.4em;
+}
+
+/* Barre Verticale */
+
+.ui.four.wide.segments a,.ui.four.wide.segments .ui.large.list a.header {
+	color: #F26202;
+}
+
+.title {
+	font-size: 1.1em;
+	font-weight: bold;
+}
