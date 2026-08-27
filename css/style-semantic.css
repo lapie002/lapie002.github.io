@@ -18,7 +18,9 @@ ul.ui.list {
 /* Images Size*/
 
 div.ui.miny.images img{
-	max-width: 4vw;
+	/* uniform height so portrait logos (PHP shield) don't render taller than square ones */
+	max-height: 5vw;
+	max-width: 6vw;
 	margin: 2vh 0.3vw;
 }
 div.ui.miny.images img:hover{
